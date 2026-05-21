@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="bg-white/70 backdrop-blur-xl border-b border-gray-200 shadow-sm">
+      <div className="bg-white/70 backdrop-blur-xl ">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
           {/* Logo */}
           <div className="">
@@ -29,22 +29,20 @@ const Navbar = () => {
               className="relative text-gray-700 hover:text-cyan-600 transition group font-medium"
             >
               Home
-              <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-linear-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+              {/* <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-linear-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span> */}
             </Link>
 
             <Link
-              href="/all-appointment"
+              href="/our-doctors"
               className="relative text-gray-700 hover:text-cyan-600 transition group font-medium"
             >
-              All Appointment
-              <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-linear-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
+              Our Doctors
             </Link>
             <Link
               href="/dashboard"
               className="relative text-gray-700 hover:text-cyan-600 transition group font-medium"
             >
               DashBoard
-              <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-linear-to-r from-cyan-500 to-pink-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
 
@@ -89,6 +87,13 @@ const Navbar = () => {
             className="block text-gray-700 hover:text-cyan-600 text-lg transition font-medium"
           >
             Home
+          </Link>
+          <Link
+            href="/our-doctors"
+            onClick={() => setOpen(false)}
+            className="block text-gray-700 hover:text-cyan-600 text-lg transition font-medium"
+          >
+            Our Doctors
           </Link>
         </div>
       </div>
