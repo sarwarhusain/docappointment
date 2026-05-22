@@ -1,8 +1,9 @@
 [
   {
-    "id": "d1",
     "name": "Dr. Ahmed Farukh",
     "specialty": "Acupuncture",
+    "qualification": "MBBS, Diploma in Acupuncture",
+    "designation": "Consultant - Energetic Medicine & Acupuncture",
     "image": "https://www.praavahealth.com/media/images/Dr._Ahmed_Farukh.2e16d0ba.fill-500x666-c0.format-webp.webp",
     "experience": "12 years",
     "availability": ["09:00 AM - 12:00 PM", "05:00 PM - 08:00 PM"],
@@ -12,9 +13,10 @@
     "fee": 900
   },
   {
-    "id": "d2",
     "name": "Dr. Raghib Manzoor",
     "specialty": "Anesthesiology",
+    "qualification": "MBBS, MD (Anesthesiology)",
+    "designation": "Consultant - Anesthesiology & Hyperbaric Physician",
     "image": "https://www.praavahealth.com/media-images/IEewlKADmpNIHKznJsq_Ao7Pg7s=/72/fill-500x666-c0/Dr._Raghib_Manzoor.png",
     "experience": "15 years",
     "availability": ["10:00 AM - 01:00 PM", "06:00 PM - 09:00 PM"],
@@ -24,10 +26,11 @@
     "fee": 1200
   },
   {
-    "id": "d3",
-    "name": "Dr. Raghib_Khan",
+    "name": "Assistant Professor DR. AZM Ahsan Ullah",
     "specialty": "Cardiology",
-    "image": "https://www.praavahealth.com/media/images/Dr._Raghib_Manzoor.2e16d0ba.fill-500x666-c0.png",
+    "qualification": "MBBS, FCPS (Cardiology)",
+    "designation": "Consultant - Cardiology & Emergency & Training",
+    "image": "https://www.praavahealth.com/media-images/fZZyr7ATzp9NXhP9nrPr16JnT4I=/320/fill-500x666-c0/ENT.jpg",
     "experience": "14 years",
     "availability": ["09:00 AM - 11:30 AM", "04:00 PM - 07:00 PM"],
     "description": "Cardiology consultant specializing in emergency cardiac care and preventive heart treatment.",
@@ -36,9 +39,10 @@
     "fee": 1000
   },
   {
-    "id": "d4",
     "name": "Dr. Munshi MB MD Shoaib Adnan",
     "specialty": "Cardiology",
+    "qualification": "MBBS, MD (Cardiology)",
+    "designation": "Consultant - Cardiology",
     "image": "https://www.praavahealth.com/media-images/3UjuQkMQAL2EbhHLq8Xer_NddkU=/293/fill-500x666-c0/Munshi_MB_MD_Shoaib_Adnan.jpg",
     "experience": "11 years",
     "availability": ["08:00 AM - 11:00 AM", "05:00 PM - 08:00 PM"],
@@ -48,21 +52,23 @@
     "fee": 950
   },
   {
-    "id": "d5",
     "name": "Dr. AHM Masud Sinha",
     "specialty": "Cardiology",
+    "qualification": "MBBS, FCPS, FACC",
+    "designation": "Senior Consultant - Cardiology",
     "image": "https://www.praavahealth.com/media-images/aujCR7Us3sqrgvfnvAzQkqGhLuE=/73/fill-500x666-c0/masud_sinha.png",
     "experience": "16 years",
     "availability": ["10:00 AM - 01:00 PM", "03:00 PM - 06:00 PM"],
-    "description": "Senior cardiology consultant providing advanced heart disease treatment and consultation.",
+    "description": "Senior cardiology consultant providing advanced heart disease consultation.",
     "hospital": "Ibn Sina Hospital",
     "location": "Dhanmondi, Dhaka",
     "fee": 1100
   },
   {
-    "id": "d6",
-    "name": "Dr. Farzana Mafruha khan",
+    "name": "Dr. Farzana Mafruha Khan",
     "specialty": "Cardiology",
+    "qualification": "MBBS, MD (Cardiology)",
+    "designation": "Consultant - Cardiology",
     "image": "https://www.praavahealth.com/media-images/iMLDA35B7dFc9778wEBzQ_Yg5mM=/279/fill-500x666-c0/Mafruha.png",
     "experience": "13 years",
     "availability": ["09:30 AM - 12:30 PM", "04:30 PM - 07:30 PM"],
@@ -72,9 +78,10 @@
     "fee": 1000
   },
   {
-    "id": "d7",
     "name": "Dr. Mohammed Mizanur Rahman",
     "specialty": "Cardiology",
+    "qualification": "MBBS, FCPS (Medicine), MD (Cardiology)",
+    "designation": "Senior Consultant - Cardiology & Hypertension",
     "image": "https://www.praavahealth.com/media-images/sVA4xhViqiCaFJRR-Obiv5DqXms=/38/fill-500x666-c0/mizanur.png",
     "experience": "18 years",
     "availability": ["08:30 AM - 11:30 AM", "05:00 PM - 08:00 PM"],
@@ -84,21 +91,23 @@
     "fee": 1200
   },
   {
-    "id": "d8",
-    "name": "Dr. Muhammad Mahboob_Ali",
+    "name": "Dr. Muhammad Mahboob Ali",
     "specialty": "Cardiology",
+    "qualification": "MBBS, D-CARD",
+    "designation": "Senior Consultant - Cardiology",
     "image": "https://www.praavahealth.com/media-images/HI1wI2imdt3MW9B7vDPLCYewoP8=/503/fill-500x666-c0/Prof._Dr._Mahboob_Ali_Sr._Consultant-_Cardiology.jpg",
     "experience": "10 years",
     "availability": ["09:00 AM - 12:00 PM", "06:00 PM - 09:00 PM"],
-    "description": "Cardiology consultant providing modern diagnostic and therapeutic cardiac services.",
+    "description": "Cardiology consultant providing modern diagnostic and therapeutic cardiology care.",
     "hospital": "Anwer Khan Modern Hospital",
     "location": "Dhanmondi, Dhaka",
     "fee": 850
   },
   {
-    "id": "d9",
-    "name": "Major Dr.Deena Tanjin",
+    "name": "Major Dr. Deena Tanjin",
     "specialty": "Pediatric Cardiology",
+    "qualification": "MBBS, MD (Pediatric Cardiology)",
+    "designation": "Consultant - Pediatric Cardiology",
     "image": "https://www.praavahealth.com/media-images/vwAM4Em3c2sqSNK0ljNyRF7y7dE=/635/fill-500x666-c0/Dr._Deena_Website_Image.jpg",
     "experience": "9 years",
     "availability": ["09:00 AM - 01:00 PM", "04:00 PM - 06:00 PM"],
@@ -108,9 +117,10 @@
     "fee": 1300
   },
   {
-    "id": "d10",
-    "name": "Prof. Dr. Monsur_Alam",
+    "name": "Prof. Dr. Monsur Alam",
     "specialty": "Cardiology",
+    "qualification": "MBBS, FCPS, FRCP",
+    "designation": "Senior Consultant - Advanced Cardiology",
     "image": "https://www.praavahealth.com/media-images/VZ9TDbi_P1rduoZvxgwsvjqNb2k=/650/fill-500x666-c0/Monsur_Alam.jpg",
     "experience": "25 years",
     "availability": ["10:00 AM - 01:00 PM", "05:00 PM - 07:00 PM"],
@@ -120,9 +130,10 @@
     "fee": 1500
   },
   {
-    "id": "d11",
     "name": "Dr. Baitun Nahar Joya Deena",
     "specialty": "Clinical Physician",
+    "qualification": "MBBS, FCPS (Medicine)",
+    "designation": "Consultant - Clinical Medicine",
     "image": "https://www.praavahealth.com/media-images/wk1FgaVRAvIKN8m4KXLxRpql9fE=/490/fill-500x666-c0/Website_Image_1.jpg",
     "experience": "8 years",
     "availability": ["09:00 AM - 12:00 PM", "03:00 PM - 06:00 PM"],
@@ -132,9 +143,10 @@
     "fee": 700
   },
   {
-    "id": "d12",
-    "name": "Dr. Shamim_ara_sarkar",
+    "name": "Dr. Shamim Ara Sarkar",
     "specialty": "Dentistry",
+    "qualification": "BDS, FCPS (Dental Surgery)",
+    "designation": "Consultant - Cosmetic & Restorative Dentistry",
     "image": "https://www.praavahealth.com/media-images/o46VqZ9ng6nbgLQRDLeL9krZZD4=/80/fill-500x666-c0/Shamim_ara_sarkar.png",
     "experience": "10 years",
     "availability": ["10:00 AM - 01:00 PM", "05:00 PM - 08:00 PM"],
@@ -144,9 +156,10 @@
     "fee": 800
   },
   {
-    "id": "d13",
-    "name": "Dr.Nafees_chowdhur",
+    "name": "Dr. Nafees Chowdhury",
     "specialty": "Dermatology",
+    "qualification": "MBBS, DDV (Dermatology)",
+    "designation": "Consultant - Dermatology",
     "image": "https://www.praavahealth.com/media/images/Nafees_chowdhur.2e16d0ba.fill-500x666-c0.format-webp.webp",
     "experience": "14 years",
     "availability": ["09:00 AM - 11:00 AM", "04:00 PM - 07:00 PM"],
@@ -156,9 +169,10 @@
     "fee": 1000
   },
   {
-    "id": "d14",
-    "name": "Dr. M.A. Tarafdar_Moham",
+    "name": "Dr. M.A. Tarafdar Moham",
     "specialty": "Diabetology",
+    "qualification": "MBBS, MD (Endocrinology)",
+    "designation": "Consultant - Diabetology & Metabolic Disorders",
     "image": "https://www.praavahealth.com/media/images/Dr._Tarafdar_Moham.2e16d0ba.fill-500x666-c0.format-webp.webp",
     "experience": "17 years",
     "availability": ["08:00 AM - 12:00 PM", "05:00 PM - 08:00 PM"],
@@ -168,9 +182,10 @@
     "fee": 1100
   },
   {
-    "id": "d15",
-    "name": "Dr. Mobin_Talukder",
+    "name": "Dr. Mobin Talukder",
     "specialty": "ENT",
+    "qualification": "MBBS, DLO (ENT)",
+    "designation": "Consultant - ENT & Head Neck Surgery",
     "image": "https://www.praavahealth.com/media-images/qD6zu1Rtmj4MN0xnvqCTMWoLJlA=/81/fill-500x666-c0/Dr._M._A._Mobin_Talukder.png",
     "experience": "13 years",
     "availability": ["10:00 AM - 01:00 PM", "04:00 PM - 07:00 PM"],
