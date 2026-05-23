@@ -3,13 +3,12 @@ import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import Image from "next/image";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
-import { MdArrowRightAlt } from "react-icons/md";
 
 const DoctorsDetails = async ({ params }) => {
   const { id } = await params;
   const res = await fetch(`http://localhost:5001/doctors/${id}`);
-  const detailsData = await res.json();
-  // console.log(detailsData);
+  const doctorsData = await res.json();
+  // console.log( doctorsData);
   // if (!detailsData) {
   //   return <p>Doctor not found</p>;
   // }
@@ -23,7 +22,7 @@ const DoctorsDetails = async ({ params }) => {
     fee,
     availability,
     description,
-  } = detailsData;
+  } = doctorsData;
   return (
     <div className="max-w-7xl mx-auto p-8 md:p-14 rounded-sm shadow-2xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -66,7 +65,7 @@ const DoctorsDetails = async ({ params }) => {
         </div>
       </div>
       <div>
-        <BookingCard detailsData={detailsData} />
+        <BookingCard doctorsData={doctorsData} />
       </div>
     </div>
   );

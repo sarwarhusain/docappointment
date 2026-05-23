@@ -2,13 +2,26 @@
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { MdArrowRightAlt } from "react-icons/md";
-const BookingCard = ({ detailsData }) => {
-  // console.log(detailsData);
+const BookingCard = ({ doctorsData }) => {
+  const { name: doctorName } = doctorsData;
+  // console.log( doctorsData);
   const onSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const userData = Object.fromEntries(formData.entries());
     console.log(userData);
+
+    // "userEmail": "user@gmail.com",
+    // "doctorName": "Dr. Ayesha Rahman",
+    // "patientName": "Rahim Uddin",
+    // "gender": "Male",
+    // "phone": "01712345678",
+    // "appointmentDate": "2026-05-12",
+    // "appointmentTime": "10:30 AM"
+
+    const handleBooking = async () => {
+      const bookingData = {};
+    };
   };
   return (
     <Modal>
@@ -23,7 +36,7 @@ const BookingCard = ({ detailsData }) => {
               <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                 <Envelope className="size-5" />
               </Modal.Icon>
-              <Modal.Heading>Contact Us</Modal.Heading>
+              <Modal.Heading>Appointment Form</Modal.Heading>
               <p className="mt-1.5 text-sm leading-5 text-muted">
                 Fill out the form below and well get back to you.
               </p>
@@ -37,7 +50,17 @@ const BookingCard = ({ detailsData }) => {
                     type="text"
                     variant="secondary"
                   >
-                    <Label>Name</Label>
+                    <Label>Doctor Name</Label>
+                    <Input placeholder="Enter your name" />
+                  </TextField>
+                  <TextField
+                    className="w-full"
+                    defaultValue={doctorsData.name}
+                    name="name"
+                    type="text"
+                    variant="secondary"
+                  >
+                    <Label>Patient Name</Label>
                     <Input placeholder="Enter your name" />
                   </TextField>
                   <TextField
