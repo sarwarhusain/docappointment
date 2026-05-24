@@ -1,16 +1,27 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
+// import { authClient } from "@/lib/auth-client";
 import { Bars, XmarkShape } from "@gravity-ui/icons";
-import { Avatar, Button } from "@heroui/react";
+import { Button, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { CiUser } from "react-icons/ci";
+import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const { data: session } = authClient.useSession();
+  // console.log(session);
+  const user = session?.user;
+  const handleSignOut = async () => {
+    await authClient.signOut();
+    toast.success("logout");
+  };
   return (
-    <nav>
-      <div className="bg-white/70 backdrop-blur-xl ">
+    <nav className="container mx-auto">
+      <div className="bg-white/70 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 opacity-90">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
           {/* Logo */}
           <div className="">
@@ -47,22 +58,54 @@ const Navbar = () => {
           </div>
 
           {/* login and logout */}
-          {/* <ul className="hidden md:flex items-center gap-3">
-            <Avatar>
-              <Avatar.Image alt="John Doe" />
-              <Avatar.Fallback>User</Avatar.Fallback>
-            </Avatar>
-            <Button className={"rounded-none "} variant="danger">
-              Sign Out
-            </Button>
 
-            <Link href="/signup">
-              <button>SignUp</button>
-            </Link>
-            <Link href="/login">
-              <button>Login</button>
-            </Link>
-          </ul> */}
+          {user ? (
+            <>
+              {/* <h2>{user?.name}</h2> */}
+              <Button
+                onClick={handleSignOut}
+                className={"rounded-none hidden md:flex"}
+                variant="ghost"
+              >
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <>
+              {" "}
+              <Dropdown>
+                <Button
+                  aria-label="Menu"
+                  className={"underline"}
+                  variant="ghost"
+                >
+                  <MdAccountCircle /> My Account
+                </Button>
+                <Dropdown.Popover>
+                  <Dropdown.Menu
+                    onAction={(key) => console.log(`Selected: ${key}`)}
+                  >
+                    <>
+                      <Dropdown.Item id="Signin" textValue="Signin">
+                        <Link href={"/login"}>
+                          <Label className="flex items-center gap-1">
+                            <CiUser /> Log In
+                          </Label>
+                        </Link>
+                      </Dropdown.Item>
+                      <Dropdown.Item id="Signup" textValue="Signup">
+                        <Link href={"/signup"}>
+                          <Label className="flex items-center gap-1">
+                            <CiUser /> Sign Up
+                          </Label>
+                        </Link>
+                      </Dropdown.Item>
+                    </>
+                  </Dropdown.Menu>
+                </Dropdown.Popover>
+              </Dropdown>
+            </>
+          )}
 
           {/* Mobile Button */}
           <button
@@ -94,6 +137,13 @@ const Navbar = () => {
             className="block text-gray-700 hover:text-cyan-600 text-lg transition font-medium"
           >
             Our Doctors
+          </Link>
+          <Link
+            href="/signup"
+            onClick={() => setOpen(false)}
+            className="block text-gray-700 hover:text-cyan-600 text-lg transition font-medium"
+          >
+            SignUp
           </Link>
         </div>
       </div>

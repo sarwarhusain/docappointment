@@ -1,6 +1,4 @@
 import BookingCard from "@/component/BookingCard";
-import { Envelope } from "@gravity-ui/icons";
-import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import Image from "next/image";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
@@ -8,6 +6,7 @@ const DoctorsDetails = async ({ params }) => {
   const { id } = await params;
   const res = await fetch(`http://localhost:5001/doctors/${id}`);
   const doctorsData = await res.json();
+
   // console.log( doctorsData);
   // if (!detailsData) {
   //   return <p>Doctor not found</p>;
@@ -24,7 +23,7 @@ const DoctorsDetails = async ({ params }) => {
     description,
   } = doctorsData;
   return (
-    <div className="max-w-7xl mx-auto p-8 md:p-14 rounded-sm shadow-2xl">
+    <div className="max-w-7xl my-20 mx-auto p-8 md:p-14 shadow-2xl bg-white  hover:shadow-cyan-100 hover:-translate-y-2 transition-colors duration-50">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div>
           <h2 className="text-4xl md:text-6xl font-bold text-black mb-5">

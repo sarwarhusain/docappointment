@@ -7,10 +7,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full">
+    <div className="w-full my-20">
       <Swiper
         pagination={{
           type: "progressbar",
@@ -32,7 +33,7 @@ const Banner = () => {
             className="relative h-111.5 md:h-140 lg:h-screen bg-cover  bg-center "
             style={{
               backgroundImage:
-                "url('https://www.praavahealth.com/media-images/paBIifE2aWCJmCpys24qrfIzIcE=/288/width-576%7Cformat-webp/1.jpg')",
+                "url('https://www.praavahealth.com/media/images/1.width-576.format-webp.webp')",
             }}
           >
             {/* Overlay */}
@@ -49,9 +50,12 @@ const Banner = () => {
                   Let us take care of your health
                 </p>
                 <div className="flex gap-4">
-                  <button className="rounded-full bg-cyan-500 px-6 py-3 font-semibold text-white hover:bg-cyan-600">
-                    Book Appointment
-                  </button>
+                  <Link href={"/our-doctors"}>
+                    {" "}
+                    <button className="rounded-full bg-cyan-500 px-6 py-3 font-semibold text-white hover:bg-cyan-600">
+                      Book Appointment
+                    </button>
+                  </Link>
 
                   <button className="rounded-full border border-white px-6 py-3 font-semibold text-white hover:bg-white hover:text-black">
                     Learn More
@@ -167,8 +171,6 @@ const Banner = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* Slide 2 */}
-        {/* url('https://www.praavahealth.com/media/images/3.width-576.format-webp.webp */}
       </Swiper>
     </div>
   );
