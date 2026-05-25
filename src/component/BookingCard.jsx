@@ -10,11 +10,14 @@ import {
   Surface,
   TextField,
   TimeField,
+  Select,
+  ListBox,
 } from "@heroui/react";
+import { redirect } from "next/navigation";
 import toast from "react-hot-toast";
 import { MdArrowRightAlt } from "react-icons/md";
 const BookingCard = ({ doctorsData }) => {
-  const { name, appointmentTime, appointmentDate } = doctorsData;
+  const { name } = doctorsData;
   const { data: session } = authClient.useSession();
   const user = session?.user; //
   // console.log(user);
@@ -42,7 +45,7 @@ const BookingCard = ({ doctorsData }) => {
       appointmentDate: user?.appointmentDate,
     };
 
-    const res = await fetch("http://localhost:5001/bookings", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -50,9 +53,10 @@ const BookingCard = ({ doctorsData }) => {
       body: JSON.stringify(bookingData),
     });
     const data = await res.json();
+    console.log(data);
     if (data.insertedId) {
       toast.success("booking Successfully");
-      return;
+      redirect('/our-doctors')
     }
   };
 
@@ -86,10 +90,7 @@ const BookingCard = ({ doctorsData }) => {
                     variant="secondary"
                   >
                     <Label>Doctor Name</Label>
-                    <Input
-                      // defaultValue={doctorName}
-                      placeholder="Enter Doctor name"
-                    />
+                    <Input placeholder="Enter Doctor name" />
                   </TextField>
                   <TextField
                     className="w-full"
@@ -116,16 +117,23 @@ const BookingCard = ({ doctorsData }) => {
                     <Label>Phone</Label>
                     <Input name="phone" type="number" />
                   </TextField>
-                  <TextField
-                    className="w-full"
-                    name="gender"
-                    isRequired
-                    type="text"
-                    variant="secondary"
-                  >
-                    <Label>Gender</Label>
-                    <Input placeholder="Enter your gender" />
-                  </TextField>
+
+                  <div>
+                    <Select name="gender" isRequired className="w-full">
+                      <Label>Gender</Label>
+
+                      <Select.Trigger className="rounded-2xl">
+                        <Select.Value />
+                        <Select.Indicator />
+                      </Select.Trigger>
+                      <Select.Popover>
+                        <ListBox>
+                          <ListBox.Item id="male">Male</ListBox.Item>
+                          <ListBox.Item id="female">Female</ListBox.Item>
+                        </ListBox>
+                      </Select.Popover>
+                    </Select>
+                  </div>
 
                   <TextField isRequired>
                     <Label>Appointment Date</Label>

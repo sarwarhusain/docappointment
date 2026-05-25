@@ -1,7 +1,7 @@
 import DoctorCard from "./DoctorCard";
 
 const TopRated = async () => {
-  const res = await fetch("http://localhost:5001/top-rated");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top-rated`);
   const topRated = await res.json();
   console.log(topRated);
   return (

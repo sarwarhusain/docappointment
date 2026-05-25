@@ -3,7 +3,7 @@
 import { authClient } from "@/lib/auth-client";
 // import { authClient } from "@/lib/auth-client";
 import { Bars, XmarkShape } from "@gravity-ui/icons";
-import { Button, Dropdown, Label } from "@heroui/react";
+import { Avatar, Button, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -60,16 +60,19 @@ const Navbar = () => {
           {/* login and logout */}
 
           {user ? (
-            <>
-              {/* <h2>{user?.name}</h2> */}
+            <div className="flex items-center gap-1">
+              <Avatar>
+                <Avatar.Image alt={user?.name} src={user?.image} />
+                <Avatar.Fallback>{user.name ? user.name : JD}</Avatar.Fallback>
+              </Avatar>
               <Button
                 onClick={handleSignOut}
-                className={"rounded-none hidden md:flex"}
+                // className={"rounded-none hidden md:flex"}
                 variant="ghost"
               >
                 Sign Out
               </Button>
-            </>
+            </div>
           ) : (
             <>
               {" "}
