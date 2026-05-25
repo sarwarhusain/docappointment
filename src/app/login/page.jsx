@@ -14,6 +14,9 @@ import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 
+// background-color: rgba(255, 255, 255, 1);
+// background-color: rgba(255, 255, 255, 1);
+
 const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -30,13 +33,13 @@ const Login = () => {
       return;
     }
     if (data) {
-      redirect('/')
+      redirect("/");
     }
     // console.log(data, error, "data from signup");
   };
 
   return (
-    <div className="min-h-screen my-20">
+    <div className="min-h-screen my-20 bg-[#ffffff]">
       <Form
         className="flex w-96 flex-col gap-4 container mx-auto border m-2 p-5 shadow-2xl rounded-2xl"
         onSubmit={onSubmit}

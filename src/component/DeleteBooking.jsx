@@ -1,6 +1,6 @@
 "use client";
+import { TrashBin } from "@gravity-ui/icons";
 import { Button, Modal } from "@heroui/react";
-import { Rocket } from "lucide-react";
 import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
@@ -44,7 +44,7 @@ const DeleteBooking = ({ booking }) => {
               <Modal.CloseTrigger />
               <Modal.Header>
                 <Modal.Icon className="bg-default text-foreground">
-                  <Rocket className="size-5" />
+                  <TrashBin className="size-5" />
                 </Modal.Icon>
                 <Modal.Heading>
                   Delete CareFully,it will never return

@@ -47,6 +47,11 @@ const MyBooking = async () => {
                     <span className=" text-gray-600">Email: </span>
                     <span className=" text-gray-500">{booking.userEmail}</span>
                   </p>
+                  <p className="flex gap-1 items-center">
+                    <CiCalendarDate />
+                    <span className=" text-gray-600">Gender </span>
+                    <span className=" text-gray-500">{booking.gender}</span>
+                  </p>
                   <div className="flex justify-center">
                     <EditBooking booking={booking} />
                     <DeleteBooking booking={booking} />
@@ -72,12 +77,5 @@ const MyBooking = async () => {
     </div>
   );
 };
-//  "userEmail": "user@gmail.com",
-//   //   "doctorName": "Dr. Ayesha Rahman",
-//   //   "patientName": "Rahim Uddin",
-//   //   "gender": "Male",
-//   //   "phone": "01712345678",
-//   //   "appointmentDate": "2026-05-12",
-//   //   "appointmentTime": "10:30 AM"
 
 export default MyBooking;

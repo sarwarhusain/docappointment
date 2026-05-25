@@ -20,16 +20,6 @@ const BookingCard = ({ doctorsData }) => {
   const { name } = doctorsData;
   const { data: session } = authClient.useSession();
   const user = session?.user; //
-  // console.log(user);
-
-  // {
-  //   "userEmail": "user@gmail.com",
-  //   "doctorName": "Dr. Ayesha Rahman",
-  //   "patientName": "Rahim Uddin",
-  //   "gender": "Male",
-  //   "phone": "01712345678",
-  //   "appointmentDate": "2026-05-12",
-  //   "appointmentTime": "10:30 AM"
 
   const handleBooking = async (e) => {
     e.preventDefault();
@@ -40,7 +30,7 @@ const BookingCard = ({ doctorsData }) => {
       patientName: user?.patientName,
       userEmail: user?.userEmail, // required
       phone: user?.phone,
-      Gender: user?.gender, // required
+      gender: user?.gender, // required
       appointmentTime: user?.appointmentTime,
       appointmentDate: user?.appointmentDate,
     };
@@ -53,10 +43,11 @@ const BookingCard = ({ doctorsData }) => {
       body: JSON.stringify(bookingData),
     });
     const data = await res.json();
-    console.log(data);
+   
+    // console.log(data);
     if (data.insertedId) {
       toast.success("booking Successfully");
-      redirect('/our-doctors')
+      window.location.reload();
     }
   };
 
@@ -84,7 +75,7 @@ const BookingCard = ({ doctorsData }) => {
                   <TextField
                     className="w-full"
                     isRequired
-                    defaultValue={name}
+                    value={name}
                     name="doctorName"
                     type="text"
                     variant="secondary"
@@ -103,7 +94,7 @@ const BookingCard = ({ doctorsData }) => {
                     <Input placeholder="Enter your Patient name" />
                   </TextField>
                   <TextField
-                    defaultValue={user?.email}
+                    value={user?.email}
                     className="w-full"
                     isRequired
                     name="userEmail"

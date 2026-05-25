@@ -36,10 +36,8 @@ const Banner = () => {
                 "url('https://www.praavahealth.com/media/images/1.width-576.format-webp.webp')",
             }}
           >
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
-            {/* Content */}
             <div className="relative z-10 flex h-full items-center px-6 md:px-16">
               <div className="max-w-2xl text-white">
                 <h1 className="mb-4 text-2xl font-bold md:text-5xl">
@@ -73,10 +71,8 @@ const Banner = () => {
                 "url('https://www.praavahealth.com/media/images/3.width-576.format-webp.webp')",
             }}
           >
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
-            {/* Content */}
             <div className="relative z-10 flex h-full items-center px-6 md:px-16">
               <div className="max-w-2xl text-white">
                 <h1 className="mb-4 text-2xl font-bold md:text-5xl">
@@ -109,10 +105,8 @@ const Banner = () => {
                 "url('https://www.praavahealth.com/media/images/2.width-576.format-webp.webp')",
             }}
           >
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
-            {/* Content */}
             <div className="relative z-10 flex h-full items-center px-6 md:px-16">
               <div className="max-w-2xl text-white">
                 <h1 className="mb-4 text-2xl font-bold md:text-5xl">
@@ -145,10 +139,8 @@ const Banner = () => {
                 "url('https://www.praavahealth.com/media/images/5.width-576.format-webp.webp')",
             }}
           >
-            {/* Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
 
-            {/* Content */}
             <div className="relative z-10 flex h-full items-center px-6 md:px-16">
               <div className="max-w-2xl text-white">
                 <h1 className="mb-4 text-2xl font-bold md:text-5xl">

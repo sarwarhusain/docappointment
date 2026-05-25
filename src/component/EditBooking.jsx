@@ -1,6 +1,5 @@
 "use client";
 
-import { Envelope } from "@gravity-ui/icons";
 import {
   Button,
   FieldError,
@@ -9,12 +8,15 @@ import {
   Modal,
   Surface,
   TextField,
+  Select,
+  ListBox,
 } from "@heroui/react";
+import { Pencil } from "lucide-react";
 import toast from "react-hot-toast";
 
 export function EditBooking({ booking }) {
   // console.log(booking);
-  const { _id } = booking;
+  const { _id, patientName, gender, appointmentdate, userEmail } = booking;
   const onsubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -31,7 +33,7 @@ export function EditBooking({ booking }) {
       },
     );
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     if (data.modifiedCount > 0) {
       toast.success("Booking Update Successfully");
       // return;
@@ -42,7 +44,11 @@ export function EditBooking({ booking }) {
   return (
     <div className="">
       <Modal className="">
-        <Button size="sm" className={'hover:text-cyan-600 transition group font-medium'} variant="bordered">
+        <Button
+          size="sm"
+          className={"hover:text-cyan-600 transition group font-medium"}
+          variant="bordered"
+        >
           Edit
         </Button>
 
@@ -52,7 +58,7 @@ export function EditBooking({ booking }) {
               <Modal.CloseTrigger />
               <Modal.Header>
                 <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                  <Envelope className="size-5" />
+                  <Pencil className="size-5" />
                 </Modal.Icon>
                 <Modal.Heading>Edit Carefully</Modal.Heading>
               </Modal.Header>
@@ -62,16 +68,57 @@ export function EditBooking({ booking }) {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {/* Destination Name */}
                       <div className="md:col-span-2">
-                        <TextField isRequired>
+                        <TextField>
                           <Label>Name</Label>
-
                           <Input
-                            // defaultValue={patientName}
+                            defaultValue={patientName}
                             name="patientName"
                             className="rounded-2xl"
                           />
                           <FieldError />
                         </TextField>
+                        <TextField>
+                          <Label>Email</Label>
+
+                          <Input
+                            defaultValue={userEmail}
+                            name="userEmail"
+                            type="email"
+                            className="rounded-2xl"
+                          />
+                          <FieldError />
+                        </TextField>
+                        <TextField>
+                          <Label>AppointmentDate</Label>
+
+                          <Input
+                            defaultValue={appointmentdate}
+                            type="date"
+                            name="appointmentdate"
+                            className="rounded-2xl"
+                          />
+                          <FieldError />
+                        </TextField>
+                        <div>
+                          <Select
+                            defaultSelectedKeys={[gender]}
+                            name="gender"
+                            className="w-full"
+                          >
+                            <Label>Gender</Label>
+
+                            <Select.Trigger className="rounded-2xl">
+                              <Select.Value />
+                              <Select.Indicator />
+                            </Select.Trigger>
+                            <Select.Popover>
+                              <ListBox>
+                                <ListBox.Item id="Male">Male</ListBox.Item>
+                                <ListBox.Item id="Female">Female</ListBox.Item>
+                              </ListBox>
+                            </Select.Popover>
+                          </Select>
+                        </div>
                       </div>
 
                       {/* Image URL */}
@@ -79,7 +126,8 @@ export function EditBooking({ booking }) {
 
                     <Button
                       type="submit"
-                      className="w-full rounded-none bg-cyan-500 text-white"
+                      variant="ghost"
+                      className="w-full rounded-none "
                     >
                       Update Booking
                     </Button>
@@ -91,6 +139,5 @@ export function EditBooking({ booking }) {
         </Modal.Backdrop>
       </Modal>
     </div>
-    
   );
 }

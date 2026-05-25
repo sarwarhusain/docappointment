@@ -9,8 +9,14 @@ const nextConfig = {
         hostname: "www.praavahealth.com",
         pathname: "/**",
       },
+      // {
+      //   protocol: "https",
+      //   hostname: "ibb.co.com",
+      //   pathname: "/**",
+      // },
     ],
   },
 };
 
 export default nextConfig;
+// ibb.co.com

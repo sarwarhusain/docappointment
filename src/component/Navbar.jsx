@@ -20,7 +20,7 @@ const Navbar = () => {
     toast.success("logout");
   };
   return (
-    <nav className="container mx-auto">
+    <nav className="container mx-auto bg-[#FFFFFF]">
       <div className="bg-white/70 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 opacity-90">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
           {/* Logo */}
@@ -89,14 +89,14 @@ const Navbar = () => {
                     onAction={(key) => console.log(`Selected: ${key}`)}
                   >
                     <>
-                      <Dropdown.Item id="Signin" textValue="Signin">
-                        <Link href={"/login"}>
-                          <Label className="flex items-center gap-1">
+                      <Dropdown.Item id="Signin" textValue="Signin" className="block w-full">
+                        <Link  href={"/login"}>
+                          <Label className="flex items-center gap-1 w-full">
                             <CiUser /> Log In
                           </Label>
                         </Link>
                       </Dropdown.Item>
-                      <Dropdown.Item id="Signup" textValue="Signup">
+                      <Dropdown.Item id="Signup" textValue="Signup" className="block w-full">
                         <Link href={"/signup"}>
                           <Label className="flex items-center gap-1">
                             <CiUser /> Sign Up
