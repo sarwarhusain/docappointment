@@ -2,7 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import { Avatar, Card } from "@heroui/react";
 import React from "react";
-import { EditBooking } from "./EditBooking";
+
 import EditProfile from "./EditProfile";
 
 const Profile = () => {

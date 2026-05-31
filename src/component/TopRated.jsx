@@ -1,13 +1,17 @@
+
 import DoctorCard from "./DoctorCard";
 
 const TopRated = async () => {
+  // const { token: tokenData } = await auth.api.getToken({
+  //   headers: await headers(),
+  // });
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top-rated`);
   const topRated = await res.json();
-  console.log(topRated);
+  // console.log(topRated);
   return (
     <div className="container mx-auto my-20 ">
       <h2 className="font-bold text-2xl">Top rated Doctor</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto bg-gray-100">
         {topRated.map((doctor) => (
           <DoctorCard
             key={doctor._id}

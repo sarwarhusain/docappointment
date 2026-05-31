@@ -9,7 +9,6 @@ import {
   TextField,
 } from "@heroui/react";
 import { Pencil } from "lucide-react";
-import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 export const metadata = {
@@ -21,12 +20,13 @@ const EditProfile = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const profileData = Object.fromEntries(formData.entries());
-    console.log(profileData);
+    // console.log(profileData);
     const { data, error } = await authClient.updateUser({
       name: profileData.name, // required
       image: profileData.image, // required
     });
-    console.log(data, error);
+    console.log(data);
+    // console.log(data, error);
     if (error) {
       toast.error(error.message);
       return;
@@ -70,7 +70,6 @@ const EditProfile = () => {
 
                         <TextField>
                           <Label>Image</Label>
-
                           <Input
                             name="image"
                             type="text"

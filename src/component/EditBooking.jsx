@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   FieldError,
@@ -16,18 +17,21 @@ import toast from "react-hot-toast";
 
 export function EditBooking({ booking }) {
   // console.log(booking);
-  const { _id, patientName, gender, appointmentdate, userEmail } = booking;
+  const { _id, gender } = booking;
   const onsubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const EditDetailsData = Object.fromEntries(formData.entries());
 
+    const { data: tokenData } = await authClient.token();
+    // console.log(tokenData);
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/bookings/${_id}`,
       {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`,
         },
         body: JSON.stringify(EditDetailsData),
       },
@@ -70,18 +74,13 @@ export function EditBooking({ booking }) {
                       <div className="md:col-span-2">
                         <TextField>
                           <Label>Name</Label>
-                          <Input
-                            defaultValue={patientName}
-                            name="patientName"
-                            className="rounded-2xl"
-                          />
+                          <Input name="patientName" className="rounded-2xl" />
                           <FieldError />
                         </TextField>
                         <TextField>
                           <Label>Email</Label>
 
                           <Input
-                            defaultValue={userEmail}
                             name="userEmail"
                             type="email"
                             className="rounded-2xl"
@@ -92,7 +91,6 @@ export function EditBooking({ booking }) {
                           <Label>AppointmentDate</Label>
 
                           <Input
-                            defaultValue={appointmentdate}
                             type="date"
                             name="appointmentdate"
                             className="rounded-2xl"

@@ -13,7 +13,7 @@ import {
   Select,
   ListBox,
 } from "@heroui/react";
-import { redirect } from "next/navigation";
+
 import toast from "react-hot-toast";
 import { MdArrowRightAlt } from "react-icons/md";
 const BookingCard = ({ doctorsData }) => {
@@ -34,17 +34,17 @@ const BookingCard = ({ doctorsData }) => {
       appointmentTime: user?.appointmentTime,
       appointmentDate: user?.appointmentDate,
     };
-
+    const { data: tokenData } = await authClient.token();
+    // console.log(tokenData);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${tokenData?.token}`,
       },
       body: JSON.stringify(bookingData),
     });
     const data = await res.json();
-   
-    // console.log(data);
     if (data.insertedId) {
       toast.success("booking Successfully");
       window.location.reload();

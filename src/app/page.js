@@ -1,5 +1,7 @@
+import AboutUs from "@/component/AboutUs";
 import Banner from "@/component/Banner";
 import TopRated from "@/component/TopRated";
+import WhySquare from "@/component/WhySquare";
 import React from "react";
 export const metadata = {
   title: "Home",
@@ -10,6 +12,8 @@ const Home = () => {
     <div>
       <Banner />
       <TopRated />
+      <AboutUs />
+      <WhySquare />
     </div>
   );
 };

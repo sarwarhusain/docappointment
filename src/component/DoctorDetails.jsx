@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const DoctorDetails = ({ doctor }) => {
-  console.log(doctor);
+  // console.log(doctor);
   const {
     name,
     specialty,

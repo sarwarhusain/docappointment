@@ -26,7 +26,7 @@ const SignUp = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const user = Object.fromEntries(formData.entries());
-    console.log(user);
+    // console.log(user);
     const { data, error } = await authClient.signUp.email({
       name: user?.name, // required
       email: user?.email, // required
@@ -35,7 +35,7 @@ const SignUp = () => {
       callbackURL: "/",
     });
     if (error) {
-      console.log(error);
+      // console.log(error);
       return;
     }
     if (data) {

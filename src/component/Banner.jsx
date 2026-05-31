@@ -17,17 +17,11 @@ const Banner = () => {
           type: "progressbar",
         }}
         navigation={true}
-        // autoplay={{
-        //   delay: 4000,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter:true
-        // }}
         speed={1000}
         loop={true}
         modules={[Pagination, Navigation, Autoplay]}
         className="h-screen"
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <div
             className="relative h-111.5 md:h-140 lg:h-screen bg-cover  bg-center "
@@ -80,7 +74,7 @@ const Banner = () => {
                 </h1>
 
                 <p className="mb-8 text-lg text-gray-200">
-                  Square has designed health checks and packages tailored to
+                  Square Hospital has designed health checks and packages tailored to
                   your needs, based on age and gender, that fit within your
                   budget
                 </p>

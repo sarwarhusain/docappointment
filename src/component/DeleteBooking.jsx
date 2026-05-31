@@ -1,7 +1,7 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { TrashBin } from "@gravity-ui/icons";
 import { Button, Modal } from "@heroui/react";
-import { redirect } from "next/navigation";
 import React from "react";
 import toast from "react-hot-toast";
 
@@ -11,21 +11,24 @@ const DeleteBooking = ({ booking }) => {
   // const user = session?.user;
   // console.log(session);
   const handleDelete = async () => {
+    const { data: tokenData } = await authClient.token();
+    // console.log(tokenData);
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/bookings/${_id}`,
       {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
+          authorization: `Bearer ${tokenData?.token}`,
         },
       },
     );
     const deletedData = await res.json();
     if (deletedData.deletedCount > 0) {
       toast.success("Deleted Successfully");
-      redirect("/our-doctors");
+      window.location.reload();
     }
-    console.log(deletedData);
+    // console.log(deletedData);
   };
 
   return (

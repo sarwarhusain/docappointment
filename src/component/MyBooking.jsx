@@ -7,7 +7,11 @@ import Link from "next/link";
 import { FaSuitcaseRolling } from "react-icons/fa6";
 
 const MyBooking = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/`);
+  // const { token: tokenData } = await auth.api.getToken({
+  //   headers: await headers(),
+  // });
+  // console.log(tokenData);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, );
   const BookingData = await res.json();
   return (
     <div className="my-5">

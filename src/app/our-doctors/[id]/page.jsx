@@ -1,16 +1,22 @@
 import BookingCard from "@/component/BookingCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Image from "next/image";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const DoctorsDetails = async ({ params }) => {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`);
-  const doctorsData = await res.json();
+  const {token} = await auth.api.getToken({
+    headers: await headers(),
+  });
+  // console.log(token);
 
-  // console.log( doctorsData);
-  // if (!detailsData) {
-  //   return <p>Doctor not found</p>;
-  // }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
+  const doctorsData = await res.json();
   const {
     name,
     specialty,
@@ -65,6 +71,7 @@ const DoctorsDetails = async ({ params }) => {
       </div>
       <div>
         <BookingCard doctorsData={doctorsData} />
+       
       </div>
     </div>
   );

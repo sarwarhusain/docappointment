@@ -4,6 +4,7 @@ import { authClient } from "@/lib/auth-client";
 // import { authClient } from "@/lib/auth-client";
 import { Bars, XmarkShape } from "@gravity-ui/icons";
 import { Avatar, Button, Dropdown, Label } from "@heroui/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -24,15 +25,7 @@ const Navbar = () => {
       <div className="bg-white/70 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 opacity-90">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
           {/* Logo */}
-          <div className="">
-            DocAppointment
-            {/* <Image
-              src={"/assets/W"}
-              width={150}
-              height={150}
-              alt="logo"
-            /> */}
-          </div>
+          <div className="">DocAppointment</div>
 
           <div className="hidden md:flex gap-8">
             <Link
@@ -63,7 +56,9 @@ const Navbar = () => {
             <div className="flex items-center gap-1">
               <Avatar>
                 <Avatar.Image alt={user?.name} src={user?.image} />
-                <Avatar.Fallback>{user.name ? user.name : JD}</Avatar.Fallback>
+                <Avatar.Fallback>
+                  {user.name ? user.name : "SH"}
+                </Avatar.Fallback>
               </Avatar>
               <Button
                 onClick={handleSignOut}
@@ -89,14 +84,22 @@ const Navbar = () => {
                     onAction={(key) => console.log(`Selected: ${key}`)}
                   >
                     <>
-                      <Dropdown.Item id="Signin" textValue="Signin" className="block w-full">
-                        <Link  href={"/login"}>
+                      <Dropdown.Item
+                        id="Signin"
+                        textValue="Signin"
+                        className="block w-full"
+                      >
+                        <Link href={"/login"}>
                           <Label className="flex items-center gap-1 w-full">
                             <CiUser /> Log In
                           </Label>
                         </Link>
                       </Dropdown.Item>
-                      <Dropdown.Item id="Signup" textValue="Signup" className="block w-full">
+                      <Dropdown.Item
+                        id="Signup"
+                        textValue="Signup"
+                        className="block w-full"
+                      >
                         <Link href={"/signup"}>
                           <Label className="flex items-center gap-1">
                             <CiUser /> Sign Up
