@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="container mx-auto md:flex md:justify-between gap-5">
+    <div className="container mx-auto md:flex md:justify-between gap-5 my-15">
       <div className="flex flex-col lg:flex-row items-center gap-8">
         {/* Left Side */}
         <div className="w-full lg:w-1/2 border-l-4 border-olive-400 pl-4">

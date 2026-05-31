@@ -7,9 +7,6 @@ import toast from "react-hot-toast";
 
 const DeleteBooking = ({ booking }) => {
   const { _id } = booking;
-  // const session = await authClient.useSession();
-  // const user = session?.user;
-  // console.log(session);
   const handleDelete = async () => {
     const { data: tokenData } = await authClient.token();
     // console.log(tokenData);

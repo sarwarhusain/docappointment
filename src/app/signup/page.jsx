@@ -14,9 +14,10 @@ import {
 import { FaGoogle } from "react-icons/fa6";
 import Link from "next/link";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const SignUp = () => {
-
   const handleGoogle = async () => {
     await authClient.signIn.social({
       provider: "google",
@@ -35,13 +36,13 @@ const SignUp = () => {
       callbackURL: "/",
     });
     if (error) {
-      // console.log(error);
+      toast.danger(`${error}`);
       return;
     }
     if (data) {
-      alert("data is here", data);
+      toast.success("SignUp successfully");
+      redirect("/");
     }
-    console.log(data, error, "data from signup");
   };
 
   return (

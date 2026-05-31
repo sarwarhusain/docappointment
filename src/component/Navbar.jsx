@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="bg-white/70 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 opacity-90">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
           {/* Logo */}
-          <div className="">DocAppointment</div>
+          <div className="">Square Hospital</div>
 
           <div className="hidden md:flex gap-8">
             <Link
@@ -37,10 +37,11 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href="/our-doctors"
+              href="/doctors"
               className="relative text-gray-700 hover:text-cyan-600 transition group font-medium"
             >
-              Our Doctors
+              
+              Doctors
             </Link>
             <Link
               href="/dashboard"
@@ -138,11 +139,12 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href="/our-doctors"
+            href="/doctors"
             onClick={() => setOpen(false)}
             className="block text-gray-700 hover:text-cyan-600 text-lg transition font-medium"
           >
-            Our Doctors
+            
+            Doctors
           </Link>
           <Link
             href="/signup"

@@ -1,3 +1,4 @@
+"user client";
 import { CiCalendarDate, CiUser } from "react-icons/ci";
 import { EditBooking } from "./EditBooking";
 import DeleteBooking from "./DeleteBooking";
@@ -5,14 +6,7 @@ import { Button } from "@heroui/react";
 import { FaHome } from "react-icons/fa";
 import Link from "next/link";
 import { FaSuitcaseRolling } from "react-icons/fa6";
-
-const MyBooking = async () => {
-  // const { token: tokenData } = await auth.api.getToken({
-  //   headers: await headers(),
-  // });
-  // console.log(tokenData);
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, );
-  const BookingData = await res.json();
+const MyBooking = async ({ BookingData }) => {
   return (
     <div className="my-5">
       <Link href={"/"}>

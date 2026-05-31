@@ -9,7 +9,7 @@ const TopRated = async () => {
   const topRated = await res.json();
   // console.log(topRated);
   return (
-    <div className="container mx-auto my-20 ">
+    <div className="container mx-auto ">
       <h2 className="font-bold text-2xl">Top rated Doctor</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto bg-gray-100">
         {topRated.map((doctor) => (

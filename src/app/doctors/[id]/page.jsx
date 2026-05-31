@@ -6,7 +6,7 @@ import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const DoctorsDetails = async ({ params }) => {
   const { id } = await params;
-  const {token} = await auth.api.getToken({
+  const { token } = await auth.api.getToken({
     headers: await headers(),
   });
   // console.log(token);
@@ -25,7 +25,7 @@ const DoctorsDetails = async ({ params }) => {
     designation,
     qualification,
     fee,
-    availability,
+    availability = [],
     description,
   } = doctorsData;
   return (
@@ -71,7 +71,6 @@ const DoctorsDetails = async ({ params }) => {
       </div>
       <div>
         <BookingCard doctorsData={doctorsData} />
-       
       </div>
     </div>
   );

@@ -25,8 +25,6 @@ const EditProfile = () => {
       name: profileData.name, // required
       image: profileData.image, // required
     });
-    console.log(data);
-    // console.log(data, error);
     if (error) {
       toast.error(error.message);
       return;

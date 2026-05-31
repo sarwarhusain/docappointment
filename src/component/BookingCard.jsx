@@ -109,22 +109,19 @@ const BookingCard = ({ doctorsData }) => {
                     <Input name="phone" type="number" />
                   </TextField>
 
-                  <div>
-                    <Select name="gender" isRequired className="w-full">
-                      <Label>Gender</Label>
-
-                      <Select.Trigger className="rounded-2xl">
-                        <Select.Value />
-                        <Select.Indicator />
-                      </Select.Trigger>
-                      <Select.Popover>
-                        <ListBox>
-                          <ListBox.Item id="male">Male</ListBox.Item>
-                          <ListBox.Item id="female">Female</ListBox.Item>
-                        </ListBox>
-                      </Select.Popover>
-                    </Select>
-                  </div>
+                  <Label>Gender</Label>
+                  <Select name="gender" isRequired>
+                    <Select.Trigger className="rounded-none ">
+                      <Select.Value>Select your gender</Select.Value>
+                      {/* <Select.Indicator /> */}
+                    </Select.Trigger>
+                    <Select.Popover>
+                      <ListBox>
+                        <ListBox.Item id="male">Male</ListBox.Item>
+                        <ListBox.Item id="female">Female</ListBox.Item>
+                      </ListBox>
+                    </Select.Popover>
+                  </Select>
 
                   <TextField isRequired>
                     <Label>Appointment Date</Label>
