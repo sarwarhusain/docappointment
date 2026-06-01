@@ -5,21 +5,17 @@ import Image from "next/image";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const DoctorsDetails = async ({ params }) => {
-  const { id } = params;
-
+  const { id } = await params;
   const { token } = await auth.api.getToken({
-    headers:  headers(),
+    headers: await headers(),
   });
-  if (!session?.user) {
-    return redirect("/login");
-  }
+  // console.log(token);
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`, {
-    headers: token ? { authorization: `Bearer ${token}` } : {},
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
   });
-  if (!res.ok) {
-    throw new Error("Failed to fetch doctor data");
-  }
   const doctorsData = await res.json();
   const {
     name,

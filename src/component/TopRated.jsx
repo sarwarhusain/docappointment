@@ -2,12 +2,9 @@
 import DoctorCard from "./DoctorCard";
 
 const TopRated = async () => {
-  // const { token: tokenData } = await auth.api.getToken({
-  //   headers: await headers(),
-  // });
+ 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top-rated`);
   const topRated = await res.json();
-  // console.log(topRated);
   return (
     <div className="container mx-auto space-y-5">
       <h2 className="font-bold text-2xl md:text-3xl text-center">Top rated Doctor</h2>
