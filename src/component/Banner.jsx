@@ -42,7 +42,7 @@ const Banner = () => {
                   Let us take care of your health
                 </p>
                 <div className="flex gap-4">
-                  <Link href={"/doctors"}>
+                  <Link href={"/all-appointment"}>
                     {" "}
                     <button className="rounded-full bg-cyan-500 px-6 py-3 font-semibold text-white hover:bg-cyan-600">
                       Book Appointment

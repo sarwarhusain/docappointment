@@ -15,9 +15,9 @@ import {
 import { Pencil } from "lucide-react";
 import toast from "react-hot-toast";
 
-export function EditBooking({ booking }) {
+export function EditBooking({ booking,bookingId }) {
   // console.log(booking);
-  const { _id, gender } = booking;
+  const { gender } = booking;
   const onsubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -26,7 +26,7 @@ export function EditBooking({ booking }) {
     const { data: tokenData } = await authClient.token();
     // console.log(tokenData);
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/bookings/${_id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/bookings/${bookingId}`,
       {
         method: "PATCH",
         headers: {

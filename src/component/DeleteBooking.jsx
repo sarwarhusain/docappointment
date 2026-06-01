@@ -5,13 +5,13 @@ import { Button, Modal } from "@heroui/react";
 import React from "react";
 import toast from "react-hot-toast";
 
-const DeleteBooking = ({ booking }) => {
-  const { _id } = booking;
+const DeleteBooking = ({ booking, bookingId }) => {
+  // const { _id } = booking;
   const handleDelete = async () => {
     const { data: tokenData } = await authClient.token();
     // console.log(tokenData);
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/bookings/${_id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/bookings/${bookingId}`,
       {
         method: "DELETE",
         headers: {

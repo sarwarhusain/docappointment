@@ -1,4 +1,3 @@
-"user client";
 import { CiCalendarDate, CiTimer, CiUser } from "react-icons/ci";
 import { EditBooking } from "./EditBooking";
 import DeleteBooking from "./DeleteBooking";
@@ -8,7 +7,32 @@ import Link from "next/link";
 import { FaSuitcaseRolling } from "react-icons/fa6";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
-const MyBooking = async ({ bookingData }) => {
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+
+const MyBooking = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  const { token: tokenData } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  const user = session?.user;
+
+  if (!user) {
+    return redirect("/login");
+  }
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, {
+    method: "GET",
+    headers: {
+      authorization: `Bearer ${tokenData}`,
+    },
+  });
+  const bookingData = await res.json();
+  // console.log(bookingData);
   return (
     <div className="my-5">
       <Link href={"/"}>
@@ -19,9 +43,12 @@ const MyBooking = async ({ bookingData }) => {
 
       <div className="">
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-5 ">
-          {bookingData.length > 0 ? (
-            bookingData.map((booking, idx) => (
-              <div key={idx} className="card bg-base-100  w-96 shadow-sm">
+          {bookingData?.length > 0 ? (
+            bookingData.map((booking) => (
+              <div
+                key={booking._id}
+                className="card bg-base-100  w-96 shadow-sm"
+              >
                 <div className="card-body space-y-2">
                   <h2 className="card-title flex gap-1 items-center">
                     <CiUser />
@@ -57,8 +84,8 @@ const MyBooking = async ({ bookingData }) => {
                     <span className=" text-gray-500">{booking.gender}</span>
                   </p>
                   <div className="flex justify-center">
-                    <EditBooking booking={booking} />
-                    <DeleteBooking booking={booking} />
+                    <EditBooking booking={booking} bookingId={booking._id} />
+                    <DeleteBooking booking={booking} bookingId={booking._id} />
                   </div>
                 </div>
               </div>

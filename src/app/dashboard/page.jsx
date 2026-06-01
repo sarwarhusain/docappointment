@@ -7,10 +7,7 @@ export const metadata = {
 };
 
 const DashBoard = async () => {
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`);
-  const bookingData = await res.json();
-  // console.log(bookingData);
+  
   return (
     <div className="container mx-auto my-20">
       <h2 className="text-center font-bold text-2xl py-2">Dashboard</h2>
@@ -29,7 +26,7 @@ const DashBoard = async () => {
         </Tabs.ListContainer>
 
         <Tabs.Panel className="pt-4" id="analytics">
-          <MyBooking bookingData={bookingData}></MyBooking>
+          <MyBooking></MyBooking>
         </Tabs.Panel>
         <Tabs.Panel className="pt-4 flex " id="reports">
           <Profile />
