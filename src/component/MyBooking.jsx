@@ -1,12 +1,14 @@
 "user client";
-import { CiCalendarDate, CiUser } from "react-icons/ci";
+import { CiCalendarDate, CiTimer, CiUser } from "react-icons/ci";
 import { EditBooking } from "./EditBooking";
 import DeleteBooking from "./DeleteBooking";
 import { Button } from "@heroui/react";
 import { FaHome } from "react-icons/fa";
 import Link from "next/link";
 import { FaSuitcaseRolling } from "react-icons/fa6";
-const MyBooking = async ({ BookingData }) => {
+import { AiOutlineMail } from "react-icons/ai";
+import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
+const MyBooking = async ({ bookingData }) => {
   return (
     <div className="my-5">
       <Link href={"/"}>
@@ -17,8 +19,8 @@ const MyBooking = async ({ BookingData }) => {
 
       <div className="">
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-5 ">
-          {BookingData.length > 0 ? (
-            BookingData.map((booking, idx) => (
+          {bookingData.length > 0 ? (
+            bookingData.map((booking, idx) => (
               <div key={idx} className="card bg-base-100  w-96 shadow-sm">
                 <div className="card-body space-y-2">
                   <h2 className="card-title flex gap-1 items-center">
@@ -34,20 +36,24 @@ const MyBooking = async ({ BookingData }) => {
                     </span>
                   </p>
                   <p className="flex gap-1 items-center">
-                    <CiCalendarDate />
+                    <CiTimer />
                     <span className=" text-gray-600">AppointmentTime: </span>
                     <span className=" text-gray-500">
                       {booking.appointmentTime}
                     </span>
                   </p>
                   <p className="flex gap-1 items-center">
-                    <CiCalendarDate />
+                    <AiOutlineMail />
                     <span className=" text-gray-600">Email: </span>
                     <span className=" text-gray-500">{booking.userEmail}</span>
                   </p>
                   <p className="flex gap-1 items-center">
-                    <CiCalendarDate />
-                    <span className=" text-gray-600">Gender </span>
+                    {booking.gender === "female" ? (
+                      <BsGenderFemale />
+                    ) : (
+                      <BsGenderMale />
+                    )}
+                    <span className=" text-gray-600">Gender: </span>
                     <span className=" text-gray-500">{booking.gender}</span>
                   </p>
                   <div className="flex justify-center">

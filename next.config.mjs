@@ -6,14 +6,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "www.praavahealth.com",
+        hostname: "i.ibb.co.com",
         pathname: "/**",
       },
-      // {
-      //   protocol: "https",
-      //   hostname: "ibb.co.com",
-      //   pathname: "/**",
-      // },
     ],
   },
 };

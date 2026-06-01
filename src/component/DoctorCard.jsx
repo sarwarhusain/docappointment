@@ -19,7 +19,7 @@ const DoctorCard = ({ doctor }) => {
         <h2 className="card-title font-bold text-2xl">{name}</h2>
         <p className="font-semibold text-gray-500">{designation}</p>
         <div className="card-actions">
-          <Link href={`/doctors/${_id}`}>
+          <Link href={`/all-appointment/${_id}`}>
             <button className="underline ">See Details</button>
           </Link>
         </div>

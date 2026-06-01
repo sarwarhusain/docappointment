@@ -17,15 +17,15 @@ const SearchMethod = ({ doctors }) => {
   return (
     <div className="container mx-auto my-20">
       <div className="space-y-5">
-        <Button variant="ghost">Back</Button>
-        <h2 className="font-bold text-3xl">Our Doctors</h2>
+        <h2 className="font-bold text-3xl">Find The Right Doctors For You</h2>
         <p className="font-semibold text-gray-600  animate-[fadeUp_1s_ease-out_forwards hover:text-cyan-600 transition-all duration-300">
-          At Square, Family Medicine Doctors as well as Visiting Specialists
-          take care of you. Our doctors have years of local and international
-          experience and treat you with the respect and empathy you deserve.
+          At DocAppoint, experienced Family Medicine Doctors and Visiting
+          Specialists provide trusted healthcare with compassion, respect, and
+          expertise. Our doctors combine local and international experience to
+          deliver personalized care you can rely on.
         </p>
       </div>
-      <div className="border mx-auto my-5">
+      <div className="border-t border-gray-100 mx-auto my-5">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex items-center justify-center my-2 gap-2"
@@ -36,8 +36,8 @@ const SearchMethod = ({ doctors }) => {
             name="search"
             placeholder="Enter Doctors Name"
           />
-          <Button onClick={handleTSearchText} type="submit">
-            Search
+          <Button variant="ghost" onClick={handleTSearchText} type="submit">
+            Find
           </Button>
         </form>
       </div>

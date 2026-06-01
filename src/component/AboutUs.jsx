@@ -7,11 +7,11 @@ const AboutUs = () => {
         {/* Left Side */}
         <div className="w-full lg:w-1/2 border-l-4 border-olive-400 pl-4">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-            <span className="text-gray-500">About </span>Square
+            <span className="text-gray-500">About </span>DocAppoint
           </h2>
 
           <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed">
-            Square exists to provide a better patient experience. We are a
+           DocAppoint exists to provide a better patient experience. We are a
             one-stop-shop for your health, offering caring doctors, world-class
             diagnostics, in-house pharmacy, and much more.
           </p>

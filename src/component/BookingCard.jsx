@@ -111,7 +111,7 @@ const BookingCard = ({ doctorsData }) => {
 
                   <Label>Gender</Label>
                   <Select name="gender" isRequired>
-                    <Select.Trigger className="rounded-none ">
+                    <Select.Trigger className="rounded-none">
                       <Select.Value>Select your gender</Select.Value>
                       {/* <Select.Indicator /> */}
                     </Select.Trigger>

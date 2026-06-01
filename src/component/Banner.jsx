@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full my-20">
+    <div className="w-full my-5 md:my-20">
       <Swiper
         pagination={{
           type: "progressbar",
@@ -74,7 +74,7 @@ const Banner = () => {
                 </h1>
 
                 <p className="mb-8 text-lg text-gray-200">
-                  Square Hospital has designed health checks and packages tailored to
+                DocAppoint has designed health checks and packages tailored to
                   your needs, based on age and gender, that fit within your
                   budget
                 </p>
@@ -142,7 +142,7 @@ const Banner = () => {
                 </h1>
 
                 <p className="mb-8 text-lg text-gray-200">
-                  Square pharmacy is now online and delivers across Dhaka
+                  DocAppoint pharmacy is now online and delivers across Dhaka
                 </p>
                 <div className="flex gap-4">
                   <button className="rounded-full bg-cyan-500 px-6 py-3 font-semibold text-white hover:bg-cyan-600">

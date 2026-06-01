@@ -39,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen my-20 bg-[#ffffff]">
+    <div className="min-h-screen my-10 md:my-20  bg-[#ffffff]">
       <Form
         className="flex w-96 flex-col gap-4 container mx-auto border m-2 p-5 shadow-2xl rounded-2xl"
         onSubmit={onSubmit}
