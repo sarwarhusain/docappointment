@@ -15,8 +15,8 @@ const SearchMethod = ({ doctors }) => {
   );
   //   console.log(filteredDoctor);
   return (
-    <div className="container mx-auto my-20">
-      <div className="space-y-5">
+    <div className="container mx-auto my-20 ">
+      <div className="space-y-5 ">
         <h2 className="font-bold text-3xl">Find The Right Doctors For You</h2>
         <p className="font-semibold text-gray-600  animate-[fadeUp_1s_ease-out_forwards hover:text-cyan-600 transition-all duration-300">
           At DocAppoint, experienced Family Medicine Doctors and Visiting

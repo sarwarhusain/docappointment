@@ -1,7 +1,16 @@
+import { auth } from "@/lib/auth";
 import DoctorCard from "./DoctorCard";
+import { headers } from "next/headers";
 
 const TopRated = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top-rated`);
+  const { token: tokenData } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/top-rated`, {
+    headers: {
+      authorization: `Bearer ${tokenData}`,
+    },
+  });
   if (!res.ok) {
     throw new Error(`HTTP ${res.status}`);
   }

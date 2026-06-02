@@ -13,25 +13,29 @@ import {
 } from "@heroui/react";
 import { IoExitOutline } from "react-icons/io5";
 import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const Contact = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const userData = Object.fromEntries(formData.entries());
+    const feedbackData = Object.fromEntries(formData.entries());
 
-    const { data, error } = await authClient.signIn.email({
-      email: userData.email, // required
-      password: userData.password, // required
+    const { data: tokenData } = await authClient.token();
+    // console.log(tokenData);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${tokenData?.token}`,
+      },
+      body: JSON.stringify(feedbackData),
     });
-    if (error) {
-      toast.error(`${error.message}`);
-    }
-    if (data) {
-      toast.success(`${userData.email} Added Successfully `);
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 1500);
+    const data = await res.json();
+    if (data.insertedId) {
+      toast.success("Email Send Successfully");
+      // window.location.reload();
+      redirect("/");
     }
   };
 

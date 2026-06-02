@@ -1,0 +1,27 @@
+import MembershipPlan from "@/component/MembershipPlan";
+import React from "react";
+
+const MemberShipPlan = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/plan`);
+  const planData = await res.json();
+  console.log(planData);
+  return (
+    <div className="my-10 md:my-20 min-h-screen container mx-auto space-y-5">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-500">Membership Plan</h2>
+      <p className="text-sm  md:text-lg">
+        Our membership plans cover the healthcare needs of you and your family.
+        The plans allow you to access doctors as many times as you need for a
+        one-time purchase to proactively manage your health, be it yearly or for
+        a certain period. Membership plans also cover a set of tests especially
+        tailored by experienced doctors to meet your healthcare needs.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
+        {planData.map((plan) => (
+          <MembershipPlan key={plan._id} plan={plan} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MemberShipPlan;

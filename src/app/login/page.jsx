@@ -86,7 +86,7 @@ const Login = () => {
           </Description>
           <FieldError />
         </TextField>
-
+        <p className="underline text-gray-500">Forget Password</p>
         <Button variant="ghost" className={"w-full border"} type="submit">
           <Check />
           Sign In

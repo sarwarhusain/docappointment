@@ -5,8 +5,7 @@ import { Button, Modal } from "@heroui/react";
 import React from "react";
 import toast from "react-hot-toast";
 
-const DeleteBooking = ({ booking, bookingId }) => {
-  // const { _id } = booking;
+const DeleteBooking = ({  bookingId }) => {
   const handleDelete = async () => {
     const { data: tokenData } = await authClient.token();
     // console.log(tokenData);

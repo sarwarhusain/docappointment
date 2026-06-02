@@ -2,7 +2,6 @@ import BookingCard from "@/component/BookingCard";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import Image from "next/image";
-import toast from "react-hot-toast";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 const DoctorsDetails = async ({ params }) => {
@@ -13,14 +12,11 @@ const DoctorsDetails = async ({ params }) => {
   // console.log(token);
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/doctors/${id}`, {
-    method: "GET",
     headers: {
       authorization: `Bearer ${token}`,
     },
   });
-  if (!res.ok) {
-    toast.warning("Data Not Found");
-  }
+
   const doctorsData = await res.json();
   const {
     name,
@@ -30,7 +26,7 @@ const DoctorsDetails = async ({ params }) => {
     designation,
     qualification,
     fee,
-    availability = [],
+    availability,
     description,
   } = doctorsData;
   return (

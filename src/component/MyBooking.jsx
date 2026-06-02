@@ -1,3 +1,4 @@
+// "user client";
 import { CiCalendarDate, CiTimer, CiUser } from "react-icons/ci";
 import { EditBooking } from "./EditBooking";
 import DeleteBooking from "./DeleteBooking";
@@ -26,7 +27,6 @@ const MyBooking = async () => {
   }
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings`, {
-    method: "GET",
     headers: {
       authorization: `Bearer ${tokenData}`,
     },
@@ -44,11 +44,8 @@ const MyBooking = async () => {
       <div className="">
         <div className=" grid grid-cols-1 md:grid-cols-3 gap-5 ">
           {bookingData?.length > 0 ? (
-            bookingData.map((booking) => (
-              <div
-                key={booking._id}
-                className="card bg-base-100  w-96 shadow-sm"
-              >
+            bookingData.map((booking, idx) => (
+              <div key={idx} className="card bg-base-100  w-96 shadow-sm">
                 <div className="card-body space-y-2">
                   <h2 className="card-title flex gap-1 items-center">
                     <CiUser />

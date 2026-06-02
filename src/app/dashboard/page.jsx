@@ -13,7 +13,7 @@ const DashBoard = async () => {
       <h2 className="text-center font-bold text-2xl py-2">Dashboard</h2>
       <Tabs className=" ">
         <Tabs.ListContainer>
-          <Tabs.List aria-label="Options" className="justify-center">
+          <Tabs.List aria-label="Options" >
             <Tabs.Tab id="analytics">
               My Booking
               <Tabs.Indicator />

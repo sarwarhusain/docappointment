@@ -6,6 +6,7 @@ import { FaSuitcaseRolling } from "react-icons/fa6";
 const NotFound = () => {
   return (
     <div className="my-20 bg-base-100 flex items-center justify-center  m-30 p-30">
+      
       <div className="">
         <div className="border rounded-3xl shadow-2xl p-10 text-center max-w-md w-full bg-white">
           <FaSuitcaseRolling className="text-7xl text-cyan-500 mx-auto mb-5" />

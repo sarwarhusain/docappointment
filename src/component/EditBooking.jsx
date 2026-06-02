@@ -11,13 +11,15 @@ import {
   TextField,
   Select,
   ListBox,
+  TimeField,
 } from "@heroui/react";
 import { Pencil } from "lucide-react";
 import toast from "react-hot-toast";
 
-export function EditBooking({ booking,bookingId }) {
+export function EditBooking({ booking, bookingId }) {
   // console.log(booking);
-  const { gender } = booking;
+  const { userEmail, appointmentTime, appointmentDate, patientName, gender } =
+    booking;
   const onsubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -97,6 +99,20 @@ export function EditBooking({ booking,bookingId }) {
                           />
                           <FieldError />
                         </TextField>
+                        <TimeField
+                          isRequired
+                          className="w-[256px]"
+                          name="appointmentTime"
+                        >
+                          <Label>Appointment time</Label>
+                          <TimeField.Group>
+                            <TimeField.Input>
+                              {(segment) => (
+                                <TimeField.Segment segment={segment} />
+                              )}
+                            </TimeField.Input>
+                          </TimeField.Group>
+                        </TimeField>
                         <div>
                           <Select
                             defaultSelectedKeys={[gender]}
