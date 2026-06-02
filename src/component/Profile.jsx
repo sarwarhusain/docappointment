@@ -9,7 +9,6 @@ import { FaUser } from "react-icons/fa";
 
 const Profile = () => {
   const { data: session } = authClient.useSession();
-  // console.log(session);
   const user = session?.user;
 
   return (
