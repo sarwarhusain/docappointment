@@ -1,10 +1,8 @@
 "use client";
 
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { authClient } from "@/lib/auth-client";
 import {
   Button,
-  Description,
   FieldError,
   Form,
   Input,
@@ -21,20 +19,17 @@ const Contact = () => {
     const formData = new FormData(e.currentTarget);
     const feedbackData = Object.fromEntries(formData.entries());
 
-    const { data: tokenData } = await authClient.token();
     // console.log(tokenData);
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${tokenData?.token}`,
       },
       body: JSON.stringify(feedbackData),
     });
     const data = await res.json();
     if (data.insertedId) {
       toast.success("Email Send Successfully");
-      // window.location.reload();
       redirect("/");
     }
   };

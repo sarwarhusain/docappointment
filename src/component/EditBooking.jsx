@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 
 export function EditBooking({ booking, bookingId }) {
   // console.log(booking);
-  const { userEmail, appointmentTime, appointmentDate, patientName, gender } =
+  const {  gender } =
     booking;
   const onsubmit = async (e) => {
     e.preventDefault();
@@ -79,16 +79,7 @@ export function EditBooking({ booking, bookingId }) {
                           <Input name="patientName" className="rounded-2xl" />
                           <FieldError />
                         </TextField>
-                        <TextField>
-                          <Label>Email</Label>
-
-                          <Input
-                            name="userEmail"
-                            type="email"
-                            className="rounded-2xl"
-                          />
-                          <FieldError />
-                        </TextField>
+                       
                         <TextField>
                           <Label>AppointmentDate</Label>
 
